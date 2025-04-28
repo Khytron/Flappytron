@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     { 
      if( other.gameObject.tag == "Obstacle")
      {
-       audioManager.PlaySFX(audioManager.hit);
+       
        FindObjectOfType<GameManager>().GameOver();
 
      }else if(other.gameObject.tag == "Scoring")

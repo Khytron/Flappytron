@@ -24,36 +24,41 @@ public class QuizManager : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private void chooseRandomQuestion()
     {
         float indexf = Random.Range(0.0f, amount);
         int index = Mathf.FloorToInt(indexf);
         question.text = questions[index];
-        answerString = answers[index].ToLower();
+        // if the question is the same as before
+        if (answers[index].ToLower() == answerString)
+        {
+            Debug.Log("Repeated a question");
+            chooseRandomQuestion(); // repeat
+        } else
+        {
+            answerString = answers[index].ToLower();
+        }
+            
 
     }
 
     public void checkAnswerCorrect()
     {
 
-        if (answer.text.ToLower() == answerString)
+        if (answer.text.ToLower() == answerString) // The user answered quiz correctly
         {
             scriptManager.QuizSuccess = true;
             scriptManager.isQuizzing = false;
-            Debug.Log("Quiz Manager thinks its correct");
 
             SceneManager.UnloadSceneAsync("Quiz");
             game.CorrectQuizContinue();
-        } else
+        }
+        else                                       // The user answered quiz incorrectly
         {
             scriptManager.QuizSuccess = false;
             scriptManager.isQuizzing = false;
-            Debug.Log("Quiz Manager thinks its incorrect");
+            scriptManager.QuizAnswer = answerString;
+
             SceneManager.UnloadSceneAsync("Quiz");
             game.IncorrectQuizContinue();
         }

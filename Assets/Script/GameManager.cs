@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,10 +17,14 @@ public class GameManager : MonoBehaviour
     public Text highScoreText; // high score
     public string highScoreKey = "high score";
     public GameObject playButton;
+    public GameObject quitButton;
     public ScriptManager scriptManager;
-
-
+    public Spawner[] spawner;
+    public bool immune; // player immunity
+    public float immuneTimer = 0.6f;
     public GameObject gameOver;
+    public GameObject answer;
+    public Text answerText;
     private int score;
 
     AudioManager audioManager;
@@ -34,8 +39,9 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        Spawner[] spawner = FindObjectsByType<Spawner>(FindObjectsSortMode.None);
+        spawner = FindObjectsByType<Spawner>(FindObjectsSortMode.None);
         scriptManager = GameObject.FindGameObjectWithTag("Script Manager").GetComponent<ScriptManager>();
+        answerText = answer.GetComponent<Text>();
     }
 
     private void Update()
@@ -44,6 +50,15 @@ public class GameManager : MonoBehaviour
         if (player.transform.position.y > 8.0f && !scriptManager.isQuizzing)
         {
             GameOver();
+        }
+        // If immune timer is ticking
+        if (immuneTimer > 0)
+        {
+            immuneTimer -= Time.deltaTime;
+        } else
+        {
+            
+            immune = false;
         }
     }
     public void UpdateScoreText()
@@ -61,10 +76,12 @@ public class GameManager : MonoBehaviour
         score = 0;
         UpdateScoreText();
         displayHighScore();
+        
 
         playButton.SetActive(false);
+        quitButton.SetActive(false);
 
-        
+        answer.SetActive(false);
         gameOver.SetActive(false);
             
 
@@ -79,6 +96,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1f;
         player.enabled = true;
+        //answer.enabled = false;
     }
 
 
@@ -96,10 +114,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Pause();
-        // Second chances with a quiz
-        SceneManager.LoadScene("Quiz", LoadSceneMode.Additive);
-      
+        if (!immune)
+        {
+            Pause();
+            resetImmuneTimer();
+            audioManager.PlaySFX(audioManager.hit);
+            // Second chances with a quiz
+            SceneManager.LoadScene("Quiz", LoadSceneMode.Additive);
+        }   
     }
 
     public void IncreaseScore()
@@ -141,6 +163,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         player.enabled = true;
+        immune = true;
+        
     }
 
     // This runs after i get a quiz incorrect
@@ -150,7 +174,20 @@ public class GameManager : MonoBehaviour
         Pipes.ResetSpeed();
         audioManager.PlaySFX(audioManager.death);
         gameOver.SetActive(true);
+        answer.SetActive(true);
         playButton.SetActive(true);
+        quitButton.SetActive(true);
+        answerText.text = "Answer: " + scriptManager.QuizAnswer;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void resetImmuneTimer()
+    {
+        immuneTimer = 0.6f;
     }
 }
 

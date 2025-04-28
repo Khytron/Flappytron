@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 6.399994, y: -6.8999996}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196041682
@@ -163,13 +163,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196041680}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.5}
+  m_Color: {r: 0.52156866, g: 0.52156866, b: 0.52156866, a: 0.5}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -177,19 +177,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 256f62e25fe4a4346b68cf9ca0dde679, type: 3}
+    m_FontSize: 30
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: Enter your answer here
 --- !u!222 &196041683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -301,8 +301,8 @@ MonoBehaviour:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
-  m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: Enter your answer here
+  m_SelectionColor: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 0.7529412}
+  m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -640,8 +640,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.1145, y: 21.4166}
-  m_SizeDelta: {x: 708.2292, y: 54.558}
+  m_AnchoredPosition: {x: 3.6786, y: 1.6747}
+  m_SizeDelta: {x: 709.3572, y: 94.0419}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &631932131
 MonoBehaviour:
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228c3f47e19c38a42b0d78c6480b40fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 20
+  amount: 50
   questions:
   - What force pulls things towards the Earth?
   - "What is H\u2082O commonly known as?"
@@ -815,15 +815,47 @@ MonoBehaviour:
   - What common liquid expands when it freezes?
   - What is the name for a group of stars that form a pattern?
   - What force opposes motion between two surfaces in contact?
+  - What color does litmus paper turn in an acid?
+  - What part of the eye controls the amount of light entering?
+  - What is the gas we breathe out?
+  - What is the chemical symbol for gold?
+  - What is the chemical symbol for silver?
+  - What is the process by which plants lose water through their leaves?
+  - What is the name for an animal without a backbone?
+  - What is the main component of natural gas?
+  - What is the function of the cerebellum in the brain?
+  - What do we call the change of an inherited charatecristics of a population over
+    generations?
+  - What is the name of the first artificial satellite to orbit the Earth?
+  - What is the chemical formula for sugar?
+  - What is the process of light bending as it passes from one medium to another?
+  - What type of energy is associated with the movement of electrons?
+  - What is the name of the layer of the Earth we live on?
+  - What is the tiny gap between two nerve cells called?
+  - What is the process of a gas turning directly into a solid?
+  - What is the main pigment responsible for the green color of plants?
+  - What is the molecule that carries genetic information?
+  - What type of energy is associated with heat?
+  - What is the name for the layer of the atmosphere closest to the Earth's surface?
+  - What is the study of sound called?
+  - What is the chemical symbol for iron?
+  - What is the name for the phenomenon where light is separated into its different
+    colors?
+  - What is the SI unit of energy
+  - What is the name for a star that has exhausted its nuclear fuel and collapsed?
+  - What type of force opposes gravity and allows rockets to lift off?
+  - What is the name of the point in Earth's orbit when it is farthest from the Sun?
+  - What is the name for a plant that retains its leaves throughout the year?
+  - What is the group name of the developers of this game?
   answers:
   - Gravity
   - Water
   - Carbon
-  - Proxima
+  - Proxima Centauri
   - Sublimation
   - Static electricity
   - Atoms
-  - Aurora borealis
+  - Aurora
   - Mitochondria
   - NaCl
   - Nitrogen
@@ -835,7 +867,37 @@ MonoBehaviour:
   - Omnivores
   - Water
   - Constellation
-  - Friction
+  - Friction Force
+  - Red
+  - Pupil
+  - Carbon dioxide
+  - Au
+  - Ag
+  - Transpiration
+  - Invertebrate
+  - Methane
+  - Coordination
+  - Evolution
+  - Sputnik
+  - C6H12O6
+  - Refraction
+  - Electrical Energy
+  - Crust
+  - Synapse
+  - Deposition
+  - Chlorophyll
+  - DNA
+  - Thermal Energy
+  - Troposphere
+  - Acoustics
+  - Fe
+  - Dispersion
+  - Joule
+  - Black hole
+  - Thrust Force
+  - Aphelion
+  - Evergreen
+  - Kastron
   question: {fileID: 631932131}
   answer: {fileID: 243005632}
   answerString: 
@@ -1089,7 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+  m_Color: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1109,7 +1171,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter your answer here
+  m_Text: 
 --- !u!222 &1836917736
 CanvasRenderer:
   m_ObjectHideFlags: 0

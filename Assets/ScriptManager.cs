@@ -4,6 +4,7 @@ public class ScriptManager : MonoBehaviour
 {
     public bool QuizSuccess = false;
     public bool isQuizzing = false;
+    public string QuizAnswer;
     public GameManager game;
     private void Start()
     {
