@@ -4,42 +4,22 @@ using UnityEngine.UI;
 
 public class countdownScript : MonoBehaviour
 {
-    public float countdownTime = 3f;
+    public ScriptManager scriptManager;
     public Text countdownText;
-    public float currentTime = 3f;
 
-
-    public void StartCountdown()
+    private void Start()
     {
-        Debug.Log("Initiating countdown loop");
-        while (currentTime > 0)
-        {
-            
-            if (float.TryParse(countdownText.text, out float countdownFloat))
-            {
-                if (countdownFloat - currentTime > 0.1)
-                {
-                    countdownText.text = Mathf.CeilToInt(currentTime).ToString();
-                    Debug.Log("Updating the countdown text to: " + Mathf.CeilToInt(currentTime).ToString());
-                }
-            }
-            Debug.Log("Current time: " + currentTime);
-            currentTime -= Time.deltaTime;
-        }
-
-        Debug.Log("Countdown finished!");
-        // Dont draw countdown text
-        countdownText.enabled = false;
-        // This variable keeps track of when countdown is over
-        currentTime = 0f;
+        scriptManager = GameObject.FindGameObjectWithTag("Script Manager").GetComponent<ScriptManager>();
+        scriptManager.isDoingCountdown = true;
+        countdownText.text = scriptManager.countdownText;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Update()
     {
-        Debug.Log("Countdown started!");
-        // Draw countdown text
-        countdownText.enabled = true;
+        if (countdownText.text != scriptManager.countdownText)
+        {
+            countdownText.text = scriptManager.countdownText;
+        }
     }
 
 }

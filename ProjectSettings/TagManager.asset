@@ -11,6 +11,7 @@ TagManager:
   - Quiz
   - Script Manager
   - Game
+  - Countdown
   layers:
   - Default
   - TransparentFX

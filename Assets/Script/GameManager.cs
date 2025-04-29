@@ -21,11 +21,11 @@ public class GameManager : MonoBehaviour
     public ScriptManager scriptManager;
     public Spawner[] spawner;
     public bool immune; // player immunity
-    public float immuneTimer = 0.6f;
+    public float immuneTimer = 0.5f;
+    public float countdownTimer = 3.0f;
     public GameObject gameOver;
     public GameObject answer;
-    public GameObject countdown; // For countdown
-    public countdownScript countdownScript;
+    public countdownTime countdown;
     public Text answerText;
     private int score;
 
@@ -44,7 +44,9 @@ public class GameManager : MonoBehaviour
         spawner = FindObjectsByType<Spawner>(FindObjectsSortMode.None);
         scriptManager = GameObject.FindGameObjectWithTag("Script Manager").GetComponent<ScriptManager>();
         answerText = answer.GetComponent<Text>();
-        countdownScript = countdown.GetComponent<countdownScript>();
+        countdown = GameObject.FindGameObjectWithTag("Countdown").GetComponent<countdownTime>();
+        Debug.Log("Initialized countdown objects");
+        Debug.Log(scriptManager.countdownText);
     }
 
     private void Update()
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
-        // If immune timer is ticking
+        // Immune timer is ticking
         if (immuneTimer > 0)
         {
             immuneTimer -= Time.deltaTime;
@@ -63,6 +65,41 @@ public class GameManager : MonoBehaviour
             
             immune = false;
         }
+
+        //Debug.Log(countdownScript.countdownText);
+
+        // -- Countdown Logic --
+        if (scriptManager.isDoingCountdown)
+        {
+            Debug.Log("Countdown timer: " + countdown.countdown);
+            countdown.decreaseCountdown();
+            
+            Debug.Log("Countdown digit: " + scriptManager.countdownNumber);
+
+            // Updating countdown
+            if (Mathf.FloorToInt(countdown.countdown) != scriptManager.countdownNumber)
+            {
+                scriptManager.UpdateCountdown();
+                Debug.Log("Updating countdown");
+            }
+
+            // Exiting countdown
+            else if (countdown.countdown <= 1.0f)
+            {   
+                Debug.Log("Countdown finished");
+
+                SceneManager.UnloadSceneAsync("Countdown");
+                
+                scriptManager.ResetCountdown(); // Resetting countdown variables
+                countdown.countdown = 3.99f;
+                Unpause();
+                immune = true; // Immune for a split second
+            }
+
+            
+            
+        }
+
     }
     public void UpdateScoreText()
     {
@@ -169,17 +206,12 @@ public class GameManager : MonoBehaviour
     // This runs after i get a quiz correct
     public void CorrectQuizContinue()
     {
-        // Countdown for 3 seconds
-        countdown.SetActive(true);
-        countdownScript.StartCountdown();
-        if (countdownScript.countdownTime == 0f) // If countdown is finished
-        {
-            Unpause();
-            immune = true; // Immune for a split second
-            countdown.SetActive(false);
-        }
+        // --- COUNTDOWN STARTING ---
+        scriptManager.isDoingCountdown = true;
+        SceneManager.LoadScene("Countdown", LoadSceneMode.Additive);
         
-        
+       
+                
     }
 
     // This runs after i get a quiz incorrect
