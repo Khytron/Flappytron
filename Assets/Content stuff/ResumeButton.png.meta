@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: af4e6952dd0a65b409566bb43722720f
+guid: 3d81e94f482662547a11ca58ebbc8859
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4304446102398311253
-    second: QuitButton_0
+      213: 2433152336268005233
+    second: ResumeButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,12 +126,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: QuitButton_0
+      name: ResumeButton_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
+        width: 25
         height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55b14489ce67cbb30800000000000000
-      internalID: 4304446102398311253
+      spriteID: 17f8aaf882b44c120800000000000000
+      internalID: 2433152336268005233
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      QuitButton_0: 4304446102398311253
+      ResumeButton_0: 2433152336268005233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

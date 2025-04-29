@@ -2,6 +2,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     public string highScoreKey = "high score";
     public GameObject playButton;
     public GameObject quitButton;
+    public GameObject pauseButton;
+    public GameObject resumeButton;
     public ScriptManager scriptManager;
     public Spawner[] spawner;
     public bool immune; // player immunity
@@ -93,7 +96,9 @@ public class GameManager : MonoBehaviour
                 scriptManager.ResetCountdown(); // Resetting countdown variables
                 countdown.countdown = 3.99f;
                 Unpause();
+                player.GetComponent<Player>().teleportMiddle(); // Teleports player to the middle
                 immune = true; // Immune for a split second
+                pauseButton.SetActive(false); // Activate pause button
             }
 
             
@@ -117,14 +122,15 @@ public class GameManager : MonoBehaviour
         UpdateScoreText();
         displayHighScore();
         
-
+        // Buttons
         playButton.SetActive(false);
         quitButton.SetActive(false);
+        pauseButton.SetActive(true);
 
         answer.SetActive(false);
         gameOver.SetActive(false);
             
-
+        
         
 
         Pipes[] pipes = FindObjectsByType<Pipes>(FindObjectsSortMode.None);
@@ -164,8 +170,12 @@ public class GameManager : MonoBehaviour
             Pause();
             resetImmuneTimer();
             audioManager.PlaySFX(audioManager.hit);
+            // Deactivate pause and resume button
+            pauseButton.SetActive(false);
+            resumeButton.SetActive(false);
             // Second chances with a quiz
             SceneManager.LoadScene("Quiz", LoadSceneMode.Additive);
+
         }   
     }
 
@@ -236,6 +246,21 @@ public class GameManager : MonoBehaviour
     {
         immuneTimer = 0.6f;
     }
+
+    public void pauseButtonClicked()
+    {
+        Pause();
+        pauseButton.SetActive(false);
+        resumeButton.SetActive(true);
+    }
+
+    public void resumeButtonClicked()
+    {
+        Unpause();
+        resumeButton.SetActive(false);
+        pauseButton.SetActive(true);
+    }
+
 }
 
 
