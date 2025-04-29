@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public float immuneTimer = 0.6f;
     public GameObject gameOver;
     public GameObject answer;
+    public GameObject countdown; // For countdown
+    public countdownScript countdownScript;
     public Text answerText;
     private int score;
 
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
         spawner = FindObjectsByType<Spawner>(FindObjectsSortMode.None);
         scriptManager = GameObject.FindGameObjectWithTag("Script Manager").GetComponent<ScriptManager>();
         answerText = answer.GetComponent<Text>();
+        countdownScript = countdown.GetComponent<countdownScript>();
     }
 
     private void Update()
@@ -94,9 +97,8 @@ public class GameManager : MonoBehaviour
             Destroy(pipes[i].gameObject);
         }
 
-        Time.timeScale = 1f;
-        player.enabled = true;
-        //answer.enabled = false;
+        Unpause();
+ 
     }
 
 
@@ -105,6 +107,12 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0f;
         player.enabled = false;
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1f;
+        player.enabled = true;
     }
     public static void ResetSpeed()
     {
@@ -161,9 +169,16 @@ public class GameManager : MonoBehaviour
     // This runs after i get a quiz correct
     public void CorrectQuizContinue()
     {
-        Time.timeScale = 1f;
-        player.enabled = true;
-        immune = true;
+        // Countdown for 3 seconds
+        countdown.SetActive(true);
+        countdownScript.StartCountdown();
+        if (countdownScript.countdownTime == 0f) // If countdown is finished
+        {
+            Unpause();
+            immune = true; // Immune for a split second
+            countdown.SetActive(false);
+        }
+        
         
     }
 
