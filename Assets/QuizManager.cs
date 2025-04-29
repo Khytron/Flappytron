@@ -44,7 +44,8 @@ public class QuizManager : MonoBehaviour
 
     public void checkAnswerCorrect()
     {
-
+        // Remove empty spaces at the end and change all capital to lowercase on user answer
+        answer.text = answer.text.TrimEnd().ToLower();
         if (answer.text.ToLower() == answerString) // The user answered quiz correctly
         {
             scriptManager.QuizSuccess = true;
