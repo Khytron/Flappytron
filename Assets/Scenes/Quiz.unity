@@ -716,7 +716,7 @@ MonoBehaviour:
   amount: 50
   questions:
   - What force pulls things towards the Earth?
-  - "What is H\u2082O commonly known as?"
+  - What is H2O commonly known as?
   - What gas do plants absorb from the air?
   - What is the closest star to our solar system (besides the Sun)?
   - What is the process of a solid turning directly into a gas?
@@ -766,11 +766,11 @@ MonoBehaviour:
   - What type of force opposes gravity and allows rockets to lift off?
   - What is the name of the point in Earth's orbit when it is farthest from the Sun?
   - What is the name for a plant that retains its leaves throughout the year?
-  - What is the group name of the developers of this game?
+  - What is the name of one of the developers of this game?
   answers:
   - Gravity/Gravity force
   - Water/Waters
-  - Carbon/Carbons
+  - Carbon dioxide/Carbon dioxides
   - Proxima Centauri
   - Sublimation
   - Static electricity
@@ -817,7 +817,7 @@ MonoBehaviour:
   - Thrust Force/Thrust
   - Aphelion
   - Evergreen/Evergreen plant
-  - Kastron/Khytron/Kas
+  - Khytron/Kas/Ikhmal
   question: {fileID: 631932131}
   answer: {fileID: 243005632}
   answerString: 

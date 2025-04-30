@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public class Pipes : MonoBehaviour
 {
     public static float speed = 5f;
+    public float speedLimit = 50f;
     private float leftEdge;
     private static int pipeCount = 0; 
     private const int pipesToIncreaseSpeed = 5;
@@ -41,8 +42,12 @@ public class Pipes : MonoBehaviour
 
              if (pipeCount % pipesToIncreaseSpeed == 0) 
             {
-                speed += speedIncrement; // Increase speed (adjust the value as needed)
-                 Debug.Log("Speed increased to: " + speed);
+                if (speed < speedLimit) // If speed is less than speed limit
+                {
+                    speed += speedIncrement; // Increase speed (adjust the value as needed)
+                    Debug.Log("Speed increased to: " + speed);
+                }
+                
             }
             if (pipeCount % 5 == 0) // Decrease gap size every 5 pipes
             {

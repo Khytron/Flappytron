@@ -14,6 +14,7 @@ public class QuizManager : MonoBehaviour
     public string answerString = " ";
     public ScriptManager scriptManager;
     public GameManager game;
+    public string[] cheatAnswer = { "yaya" };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,6 +50,14 @@ public class QuizManager : MonoBehaviour
         // All the possible answers are split with '/'
         string[] answers = answerString.Split('/');
         Debug.Log(answers);
+        // This is for cheat answer
+        foreach (string cheatans in cheatAnswer)
+        {
+            if (answer.text.TrimEnd().ToLower() == cheatans){
+                correct = true;
+            }
+        }
+        
         foreach (string actualAnswer in answers)
         {
             // Remove empty spaces at the end and change all capital to lowercase on user answer and answer string
