@@ -15,8 +15,12 @@ public class AudioManager : MonoBehaviour
    public AudioClip point;
    public AudioClip swooshing;
 
+   private float volumeLevel = 1f;
+
   private void Start() {
     musicSource.clip = background;
+    musicSource.volume = volumeLevel;
+    SFXSource.volume = volumeLevel;
     musicSource.Play();
   } 
   
@@ -24,5 +28,12 @@ public class AudioManager : MonoBehaviour
   {
     SFXSource.PlayOneShot(clip);
   }
+
+  public void SetVolume(float newVolumeLevel)
+    {
+        volumeLevel = newVolumeLevel;
+        musicSource.volume = volumeLevel;
+        SFXSource.volume = volumeLevel;
+    }
 
 }

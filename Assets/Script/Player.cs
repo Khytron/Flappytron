@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Vector3 direction;
     public float gravity = -12f;
     public float strength = 5f;
+    public bool canJump = true;
 
     AudioManager audioManager;
     private void Awake()
@@ -46,7 +47,10 @@ public class Player : MonoBehaviour
         }
 
         direction.y += gravity * Time.deltaTime;
-        transform.position += direction * Time.deltaTime;
+        if (canJump) // If bird can jump, then jump
+        {
+            transform.position += direction * Time.deltaTime;
+        }
        
     }
     private void AnimateSprite()

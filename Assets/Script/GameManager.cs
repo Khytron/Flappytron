@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -98,7 +99,7 @@ public class GameManager : MonoBehaviour
                 Unpause();
                 player.GetComponent<Player>().teleportMiddle(); // Teleports player to the middle
                 immune = true; // Immune for a split second
-                pauseButton.SetActive(false); // Activate pause button
+                pauseButton.SetActive(true); // Activate pause button
             }
 
             
@@ -249,9 +250,14 @@ public class GameManager : MonoBehaviour
 
     public void pauseButtonClicked()
     {
+        
         Pause();
         pauseButton.SetActive(false);
         resumeButton.SetActive(true);
+        // Fix bug where clicking pause button makes the bird jump 
+        player.canJump = false;
+
+
     }
 
     public void resumeButtonClicked()
@@ -259,6 +265,8 @@ public class GameManager : MonoBehaviour
         Unpause();
         resumeButton.SetActive(false);
         pauseButton.SetActive(true);
+        player.canJump = true;
+
     }
 
 }
