@@ -75,22 +75,22 @@ public class GameManager : MonoBehaviour
         // -- Countdown Logic --
         if (scriptManager.isDoingCountdown)
         {
-            Debug.Log("Countdown timer: " + countdown.countdown);
+            // Debug.Log("Countdown timer: " + countdown.countdown);
             countdown.decreaseCountdown();
             
-            Debug.Log("Countdown digit: " + scriptManager.countdownNumber);
+            // Debug.Log("Countdown digit: " + scriptManager.countdownNumber);
 
             // Updating countdown
             if (Mathf.FloorToInt(countdown.countdown) != scriptManager.countdownNumber)
             {
                 scriptManager.UpdateCountdown();
-                Debug.Log("Updating countdown");
+                //Debug.Log("Updating countdown");
             }
 
             // Exiting countdown
             else if (countdown.countdown <= 1.0f)
             {   
-                Debug.Log("Countdown finished");
+                //Debug.Log("Countdown finished");
 
                 SceneManager.UnloadSceneAsync("Countdown");
                 
@@ -130,8 +130,9 @@ public class GameManager : MonoBehaviour
 
         answer.SetActive(false);
         gameOver.SetActive(false);
-            
-        
+
+        // Teleport player to middle
+        player.teleportMiddle();
         
 
         Pipes[] pipes = FindObjectsByType<Pipes>(FindObjectsSortMode.None);
@@ -235,7 +236,7 @@ public class GameManager : MonoBehaviour
         answer.SetActive(true);
         playButton.SetActive(true);
         quitButton.SetActive(true);
-        answerText.text = "Answer: " + scriptManager.QuizAnswer;
+        answerText.text = "Answer: " + scriptManager.QuizAnswer.Split('/')[0];
     }
 
     public void Quit()

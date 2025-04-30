@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -44,17 +45,38 @@ public class QuizManager : MonoBehaviour
 
     public void checkAnswerCorrect()
     {
-        // Remove empty spaces at the end and change all capital to lowercase on user answer
-        answer.text = answer.text.TrimEnd().ToLower();
-        if (answer.text.ToLower() == answerString) // The user answered quiz correctly
+        bool correct = false;
+        // All the possible answers are split with '/'
+        string[] answers = answerString.Split('/');
+        Debug.Log(answers);
+        foreach (string actualAnswer in answers)
         {
+            // Remove empty spaces at the end and change all capital to lowercase on user answer and answer string
+            Debug.Log("One of the answer that gets checked: " + actualAnswer);
+            if (answer.text.TrimEnd().ToLower() == actualAnswer.TrimEnd().ToLower()) // The user answered quiz correctly
+            {
+                Debug.Log("The user's answer matches this answer");
+
+                correct = true;
+                break;
+            } else
+            {
+                Debug.Log("The user's answer doesn't match");
+                continue;
+            }
+        }
+
+        if (correct == true)
+        {
+            Debug.Log("We've checked through all the answers and found a match");
             scriptManager.QuizSuccess = true;
             scriptManager.isQuizzing = false;
 
             SceneManager.UnloadSceneAsync("Quiz");
             game.CorrectQuizContinue();
         }
-        else                                       // The user answered quiz incorrectly
+        
+        else if (correct == false)                     // The user answered quiz incorrectly
         {
             scriptManager.QuizSuccess = false;
             scriptManager.isQuizzing = false;

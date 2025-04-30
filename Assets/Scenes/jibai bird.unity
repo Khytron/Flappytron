@@ -156,8 +156,6 @@ MonoBehaviour:
   quitButton: {fileID: 761952469}
   pauseButton: {fileID: 753968269}
   resumeButton: {fileID: 1156632566}
-  volumeButton: {fileID: 0}
-  volumeValue: 3
   scriptManager: {fileID: 0}
   spawner: []
   immune: 0
@@ -1129,7 +1127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &753968270
 RectTransform:
   m_ObjectHideFlags: 0

@@ -768,56 +768,56 @@ MonoBehaviour:
   - What is the name for a plant that retains its leaves throughout the year?
   - What is the group name of the developers of this game?
   answers:
-  - Gravity
-  - Water
-  - Carbon
+  - Gravity/Gravity force
+  - Water/Waters
+  - Carbon/Carbons
   - Proxima Centauri
   - Sublimation
   - Static electricity
-  - Atoms
-  - Aurora
+  - Atoms/Atom
+  - Aurora/Aurora Borealis
   - Mitochondria
   - NaCl
-  - Nitrogen
+  - Nitrogen/Nitrogens
   - Photosynthesis
-  - Milky Way
-  - Andromeda
-  - Potential energy
-  - Diamond
-  - Omnivores
-  - Water
-  - Constellation
-  - Friction Force
-  - Red
-  - Pupil
-  - Carbon dioxide
+  - Milky Way/Milky Way Galaxy
+  - Andromeda/Andromeda Galaxy
+  - Potential energy/Potential
+  - Diamond/Diamonds
+  - Omnivores/Omnivore
+  - Water/Waters
+  - Constellation/Constellations
+  - Friction Force/Friction
+  - Red/Red color
+  - Pupil/Pupils
+  - Carbon dioxide/Carbon dioxides
   - Au
   - Ag
-  - Transpiration
-  - Invertebrate
-  - Methane
-  - Coordination
-  - Evolution
-  - Sputnik
+  - Transpiration/Transpirations
+  - Invertebrate/Invertebrates
+  - Methane/Methanes
+  - Coordination/Coordinations
+  - Evolution/Evolutions
+  - Sputnik/Sputnik satellite
   - C6H12O6
-  - Refraction
-  - Electrical Energy
-  - Crust
-  - Synapse
-  - Deposition
-  - Chlorophyll
-  - DNA
-  - Thermal Energy
-  - Troposphere
-  - Acoustics
+  - Refraction/Refractions
+  - Electrical Energy/Electrical
+  - Crust/Crusts
+  - Synapse/Synapses
+  - Deposition/Depositions
+  - Chlorophyll/Chlorophylls
+  - DNA/Deoxyribonucleic acid
+  - Thermal Energy/Thermal
+  - Troposphere/Tropospheres
+  - Acoustics/Acoustic
   - Fe
-  - Dispersion
-  - Joule
-  - Black hole
-  - Thrust Force
+  - Dispersion/Dispersions
+  - Joule/Joules
+  - Black hole/Black holes
+  - Thrust Force/Thrust
   - Aphelion
-  - Evergreen
-  - Kastron
+  - Evergreen/Evergreen plant
+  - Kastron/Khytron/Kas
   question: {fileID: 631932131}
   answer: {fileID: 243005632}
   answerString: 
