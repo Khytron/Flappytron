@@ -642,6 +642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipes
       objectReference: {fileID: 0}
+    - target: {fileID: 973605778939822933, guid: f36b0c167d3c8964ab3dfdeaacb166d8, type: 3}
+      propertyPath: m_Size.x
+      value: 0.96
+      objectReference: {fileID: 0}
     - target: {fileID: 4337404005080593210, guid: f36b0c167d3c8964ab3dfdeaacb166d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
