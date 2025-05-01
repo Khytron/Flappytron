@@ -27,7 +27,9 @@ namespace Dan.Demo
         [SerializeField] private RectTransform _personalEntryPanel;
         [SerializeField] private TextMeshProUGUI _personalEntryText;
 
-        
+        [Header("Submit Panel: ")]
+        [SerializeField] private GameObject _submitPanel;
+
         private Coroutine _personalEntryMoveCoroutine;
 
         public void UpdatePlayerScore()
@@ -71,6 +73,8 @@ namespace Dan.Demo
             pageNumber += amount;
             if (pageNumber < 1) return;
             _pageInput.text = pageNumber.ToString();
+            // After the user change page, load immediately
+            Load();
         }
         
         private void OnLeaderboardLoaded(Entry[] entries)
@@ -157,7 +161,38 @@ namespace Dan.Demo
 
         public void Submit()
         {
-            Leaderboards.HighScoreLeaderboard.UploadNewEntry(_playerUsernameInput.text, GameManager.score, Callback, ErrorCallback);
+            // Only can submit if string is submittable
+            // A string is submittable if it contains no space and no symbols except _
+            char[] allowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_".ToCharArray();
+            if (ContainsOnlyAllowedCharacters(_playerUsernameInput.text, allowedChars))
+            {
+                // And is not longer than 16 characters
+                if (_playerUsernameInput.text.Length <= 16)
+                {
+                    // And cannot be null
+                    if (_playerUsernameInput.text.Length != 0)
+                    {
+                        // Valid submission
+                        Leaderboards.HighScoreLeaderboard.UploadNewEntry(_playerUsernameInput.text, GameManager.score, Callback, ErrorCallback);
+                        CloseSubmitPanel();
+                    }
+                    else // User input empty string
+                    {
+                        Debug.Log("Cannot enter empty string");
+                    }
+                    
+                }
+                else
+                // Longer than 16 characters
+                {
+                    Debug.Log("Entry cannot be longer than 16 characters");
+                }
+            } else
+            // Contains space or symbols
+            {
+                Debug.Log("Entry can't contain spaces and symbols (except _)");
+            }
+            
         }
         
         public void DeleteEntry()
@@ -190,6 +225,37 @@ namespace Dan.Demo
         private void ErrorCallback(string error)
         {
             Debug.LogError(error);
+        }
+
+        private bool ContainsOnlyAllowedCharacters(string text, char[] allowed)
+        {
+            foreach (char c in text)
+            {
+                bool isAllowed = false;
+                foreach (char a in allowed)
+                {
+                    if (c == a)
+                    {
+                        isAllowed = true;
+                        break; // Character is allowed, move to the next character in the text
+                    }
+                }
+                if (!isAllowed)
+                {
+                    return false; // Found a character that is NOT allowed
+                }
+            }
+            return true; // All characters in the text are allowed
+        }
+
+        public void ToggleSubmitPanel()
+        {
+            _submitPanel.SetActive(!_submitPanel.activeSelf);
+        }
+
+        private void CloseSubmitPanel()
+        {
+            _submitPanel.SetActive(false);
         }
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
+
+
     public float amount = 5.0f;
     public string[] questions;
     public string[] answers;
@@ -24,6 +26,8 @@ public class QuizManager : MonoBehaviour
         scriptManager.isQuizzing = true;
         game = GameObject.FindGameObjectWithTag("Game").GetComponent<GameManager>();
     }
+
+
 
 
     private void chooseRandomQuestion()

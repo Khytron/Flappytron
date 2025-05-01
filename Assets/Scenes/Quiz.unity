@@ -146,15 +146,15 @@ RectTransform:
   m_GameObject: {fileID: 196041680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.52, y: 0.52, z: 0.52}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 243005631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.519989, y: -3.5}
-  m_SizeDelta: {x: -19.760004, y: -13}
+  m_AnchoredPosition: {x: 7, y: -4}
+  m_SizeDelta: {x: 621.75, y: 6.7340007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196041682
 MonoBehaviour:
@@ -178,11 +178,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 256f62e25fe4a4346b68cf9ca0dde679, type: 3}
-    m_FontSize: 30
+    m_FontSize: 60
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2588496957711592811, guid: 9470d30d0c49a6442b5d0a9844940403, type: 3}
+  m_Sprite: {fileID: 2588496957711592811, guid: 65f0b485c4ad56842bd3f2fcda3beb7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -632,15 +632,15 @@ RectTransform:
   m_GameObject: {fileID: 631932129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.51, y: 0.51, z: 0.51}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1088934052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.6786, y: 1.6747}
-  m_SizeDelta: {x: 709.3572, y: 94.0419}
+  m_AnchoredPosition: {x: 5.5801, y: 17}
+  m_SizeDelta: {x: 1393.2836, y: 166.8089}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &631932131
 MonoBehaviour:
@@ -664,7 +664,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 256f62e25fe4a4346b68cf9ca0dde679, type: 3}
-    m_FontSize: 35
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -675,7 +675,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What is the force that pulls you towards the earth?
+  m_Text: TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+    TEST TEST TEST TEST TEST TEST TEST TEST TEST
 --- !u!222 &631932132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -867,15 +868,15 @@ RectTransform:
   m_GameObject: {fileID: 884646612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1088934052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 105}
-  m_SizeDelta: {x: 208.1649, y: 35.7309}
+  m_AnchoredPosition: {x: 0, y: 92.06108}
+  m_SizeDelta: {x: 645.2925, y: 105.6712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884646614
 MonoBehaviour:
@@ -899,11 +900,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 256f62e25fe4a4346b68cf9ca0dde679, type: 3}
-    m_FontSize: 45
+    m_FontSize: 135
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 100
+    m_MinSize: 0
+    m_MaxSize: 135
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1050,15 +1051,15 @@ RectTransform:
   m_GameObject: {fileID: 1836917733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.52, y: 0.52, z: 0.52}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 243005631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.1999817, y: -3.6499996}
-  m_SizeDelta: {x: -28.39999, y: -12.700001}
+  m_AnchoredPosition: {x: 7, y: -4.0000005}
+  m_SizeDelta: {x: 621.75, y: 6.734001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836917735
 MonoBehaviour:
@@ -1082,7 +1083,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 256f62e25fe4a4346b68cf9ca0dde679, type: 3}
-    m_FontSize: 30
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
