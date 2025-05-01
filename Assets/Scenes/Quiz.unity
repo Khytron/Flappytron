@@ -301,7 +301,7 @@ MonoBehaviour:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
-  m_SelectionColor: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 0.7529412}
+  m_SelectionColor: {r: 0.09019608, g: 0.6509804, b: 0.29803923, a: 0.7529412}
   m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
@@ -823,6 +823,8 @@ MonoBehaviour:
   answerString: 
   scriptManager: {fileID: 0}
   game: {fileID: 0}
+  cheatAnswer:
+  - yaya
 --- !u!4 &685243696
 Transform:
   m_ObjectHideFlags: 0
