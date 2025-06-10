@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public GameObject quitButton;
     public GameObject pauseButton;
     public GameObject resumeButton;
-    public GameObject leaderboardButton;
     public ScriptManager scriptManager;
     public Spawner[] spawner;
     public bool immune; // player immunity
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject answer;
     public countdownTime countdown;
     public Text answerText;
-    public static int score = 5;
+    private int score;
 
     AudioManager audioManager;
     public static GameManager Instance { get; private set; }
@@ -269,12 +268,6 @@ public class GameManager : MonoBehaviour
         pauseButton.SetActive(true);
         player.canJump = true;
 
-    }
-
-    public void leaderboardButtonClicked()
-    {
-        // Load the leaderboard scene
-        SceneManager.LoadScene("Leaderboard", LoadSceneMode.Additive);
     }
 
 }
