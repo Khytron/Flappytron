@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 
 {
-    
+
 
     //private Spawner spawner;
     public static float speed = 5f;
@@ -32,9 +32,10 @@ public class GameManager : MonoBehaviour
     public GameObject answer;
     public countdownTime countdown;
     public Text answerText;
-    public static int score;
+    public static int score = 5;
 
     AudioManager audioManager;
+    public static GameManager Instance { get; private set; }
 
     private void Awake()
     {
@@ -102,19 +103,8 @@ public class GameManager : MonoBehaviour
                 pauseButton.SetActive(true); // Activate pause button
             }
 
-        }
-
-        // IF we are quizzing
-        if (scriptManager.isQuizzing)
-        { 
             
-            QuizManager quizManager = FindObjectOfType<QuizManager>();
-            // If user clicks enter, then 
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                // click the submit button
-                quizManager.checkAnswerCorrect();
-            }
+            
         }
 
     }
@@ -137,8 +127,6 @@ public class GameManager : MonoBehaviour
         // Buttons
         playButton.SetActive(false);
         quitButton.SetActive(false);
-        leaderboardButton.SetActive(false);
-
         pauseButton.SetActive(true);
 
         answer.SetActive(false);
@@ -178,7 +166,7 @@ public class GameManager : MonoBehaviour
         //pipeCount = 0; // Resets the pipe counter to 0
     }
 
-    public void GameOver() // This runs after bird splat something
+    public void GameOver()
     {
         if (!immune)
         {
@@ -190,8 +178,6 @@ public class GameManager : MonoBehaviour
             resumeButton.SetActive(false);
             // Second chances with a quiz
             SceneManager.LoadScene("Quiz", LoadSceneMode.Additive);
-            // Dont display score
-            scoreText.text = "";
 
         }   
     }
@@ -251,9 +237,7 @@ public class GameManager : MonoBehaviour
         answer.SetActive(true);
         playButton.SetActive(true);
         quitButton.SetActive(true);
-        leaderboardButton.SetActive(true);
         answerText.text = "Answer: " + scriptManager.QuizAnswer.Split('/')[0];
-        UpdateScoreText();
     }
 
     public void Quit()

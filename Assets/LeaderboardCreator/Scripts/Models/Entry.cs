@@ -8,7 +8,7 @@ namespace Dan.Models
     {
         public string Username;
         public int Score;
-        //public ulong Date;
+        public ulong Date;
         public string Extra;
         public int Rank;
         [SerializeField] internal string UserGuid;
