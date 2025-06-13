@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour
         scriptManager = GameObject.FindGameObjectWithTag("Script Manager").GetComponent<ScriptManager>();
         answerText = answer.GetComponent<Text>();
         countdown = GameObject.FindGameObjectWithTag("Countdown").GetComponent<countdownTime>();
-        Debug.Log("Initialized countdown objects");
-        Debug.Log(scriptManager.countdownText);
+        // Debug.Log("Initialized countdown objects");
+        // Debug.Log(scriptManager.countdownText);
     }
 
     private void Update()

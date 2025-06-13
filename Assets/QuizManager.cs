@@ -34,7 +34,7 @@ public class QuizManager : MonoBehaviour
         // if the question is the same as before
         if (answers[index].ToLower() == answerString)
         {
-            Debug.Log("Repeated a question");
+            // Debug.Log("Repeated a question");
             chooseRandomQuestion(); // repeat
         } else
         {
@@ -49,7 +49,7 @@ public class QuizManager : MonoBehaviour
         bool correct = false;
         // All the possible answers are split with '/'
         string[] answers = answerString.Split('/');
-        Debug.Log(answers);
+        // Debug.Log(answers);
         // This is for cheat answer
         foreach (string cheatans in cheatAnswer)
         {
@@ -61,23 +61,23 @@ public class QuizManager : MonoBehaviour
         foreach (string actualAnswer in answers)
         {
             // Remove empty spaces at the end and change all capital to lowercase on user answer and answer string
-            Debug.Log("One of the answer that gets checked: " + actualAnswer);
+            // Debug.Log("One of the answer that gets checked: " + actualAnswer);
             if (answer.text.TrimEnd().ToLower() == actualAnswer.TrimEnd().ToLower()) // The user answered quiz correctly
             {
-                Debug.Log("The user's answer matches this answer");
+                // Debug.Log("The user's answer matches this answer");
 
                 correct = true;
                 break;
             } else
             {
-                Debug.Log("The user's answer doesn't match");
+                // Debug.Log("The user's answer doesn't match");
                 continue;
             }
         }
 
         if (correct == true)
         {
-            Debug.Log("We've checked through all the answers and found a match");
+            // Debug.Log("We've checked through all the answers and found a match");
             scriptManager.QuizSuccess = true;
             scriptManager.isQuizzing = false;
 
