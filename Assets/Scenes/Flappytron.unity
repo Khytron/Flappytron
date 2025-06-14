@@ -638,6 +638,10 @@ PrefabInstance:
       propertyPath: bottomPipe
       value: 
       objectReference: {fileID: 1157259746}
+    - target: {fileID: -3525284472940877700, guid: f36b0c167d3c8964ab3dfdeaacb166d8, type: 3}
+      propertyPath: speedLimit
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 72881366162824250, guid: f36b0c167d3c8964ab3dfdeaacb166d8, type: 3}
       propertyPath: m_Name
       value: Pipes

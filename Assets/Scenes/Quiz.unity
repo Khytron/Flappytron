@@ -813,16 +813,18 @@ MonoBehaviour:
   - Fe
   - Dispersion/Dispersions
   - Joule/Joules
-  - Black hole/Black holes
+  - Black hole/Black holes/White dwarf/White dwarfs/Neutron star/Neutron stars
   - Thrust Force/Thrust
   - Aphelion
   - Evergreen/Evergreen plant
-  - Khytron/Kas/Ikhmal
+  - Kas/Ikhmal/Khytron
   question: {fileID: 631932131}
   answer: {fileID: 243005632}
   answerString: 
   scriptManager: {fileID: 0}
   game: {fileID: 0}
+  cheatAnswer:
+  - yaya
 --- !u!4 &685243696
 Transform:
   m_ObjectHideFlags: 0
